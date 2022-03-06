@@ -1,4 +1,5 @@
-set --prepend fish_function_path (realpath (status dirname)/functions)
+set --prepend fish_function_path \
+    (dirname (realpath (status filename)))/functions
 
 # Setup function path in a way that avoids running find whenever possible
 # If speed is required in a 'fish -c' call,

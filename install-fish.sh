@@ -1,3 +1,5 @@
+fish_version=3.3.1
+
 bindir=$1
 if test -z "$bindir"
 then
@@ -7,15 +9,15 @@ fi
 
 mkdir -p $bindir/fish-portable
 pushd $bindir
-curl -LO https://github.com/xxh/fish-portable/releases/download/3.3.1/fish-portable-musl-alpine-Linux-x86_64.tar.gz
-tar xf fish-portable-musl-alpine-Linux-x86_64.tar.gz --directory=fish-portable
+curl -L https://github.com/xxh/fish-portable/releases/download/$fish_version/fish-portable-musl-alpine-Linux-x86_64.tar.gz \
+    | tar xz --directory=fish-portable
 
-cat > $bindir/fish <<'EOF'
+cat > fish <<'EOF'
 #!/bin/sh
 export TERMINFO_DIRS=/lib/terminfo:/etc/terminfo:/usr/share/terminfo:$TERMINFO_DIRS
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 $CURRENT_DIR/fish-portable/bin/fish "$@"
 EOF
 
-chmod +x $bindir/fish
+chmod +x fish
 popd

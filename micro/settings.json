@@ -1,4 +1,15 @@
 {
+    "autoclose": false,
+    "basename": true,
     "colorscheme": "bubblegum",
-    "comment": false
+    "comment": false,
+    "ftoptions": false,
+    "linter": false,
+    "literate": false,
+    "rmtrailingws": true,
+    "savehistory": false,
+    "softwrap": true,
+    "statusformatr": "",
+    "tabstospaces": true,
+    "wordwrap": true
 }

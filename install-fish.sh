@@ -1,14 +1,13 @@
 fish_version=3.3.1
 
-bindir=$1
-if test -z "$bindir"
+if test -z "$LOCALDIR"
 then
-    echo 'Expected bin directory path as an argument'
+    echo 'LOCALDIR must be set'
     exit 1
 fi
 
-mkdir -p $bindir/fish-portable
-pushd $bindir
+mkdir -p $LOCALDIR/bin-portable/fish-portable
+pushd $LOCALDIR/bin-portable
 curl -L https://github.com/xxh/fish-portable/releases/download/$fish_version/fish-portable-musl-alpine-Linux-x86_64.tar.gz \
     | tar xz --directory=fish-portable
 

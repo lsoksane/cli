@@ -1,5 +1,6 @@
-set --prepend fish_function_path \
-    (dirname (realpath (status filename)))/functions
+set srcdir (dirname (realpath (status filename)))
+
+set --prepend fish_function_path $srcdir/functions
 
 # Setup function path in a way that avoids running find whenever possible
 # If speed is required in a 'fish -c' call,
@@ -11,4 +12,8 @@ if set -q INFRADIR
                 -mindepth 1 -maxdepth 1 -type d))
     end
     set --prepend fish_function_path (string split ';' $fun_dirs)
-end    
+end
+
+if status is-interactive
+    source $srcdir/config/interactive.fish
+end

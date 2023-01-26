@@ -1,8 +1,8 @@
 function find-dirs --description \
 'Find directory with fzf'
 
-    if test "$argv[1]" = '.'
-        set basedir '.'
+    if test -d "$argv[1]"
+        set basedir $argv[1]
         set query $argv[2..]
     else
         if set -q FBASEDIR
@@ -14,7 +14,7 @@ function find-dirs --description \
     end
 
     set dir (find $basedir/ -mindepth 1 -type d -not -path '*/.*' -printf '%P\n' \
-        | fzf --query="$query" --select-1)
+        | fzf --scheme=path --query="$query" --select-1)
     if test -n "$dir"
         echo $basedir/$dir
     else

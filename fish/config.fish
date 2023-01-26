@@ -17,3 +17,8 @@ end
 if status is-interactive
     source $srcdir/config/interactive.fish
 end
+
+if which batcat > /dev/null
+    alias bat='batcat'
+end
+set -gx BAT_PAGER = ''

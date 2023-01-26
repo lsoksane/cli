@@ -12,6 +12,7 @@
     "Alt-{": "None",
     "Alt-}": "None",
     "Ctrl-h": "None",
+    "Ctrl-t": "None",
     "Ctrl-w": "Quit",
     "Alt-CtrlH": "None",
     "Ctrl-o": "None",
@@ -34,4 +35,5 @@
     "F4": "None",
     "F7": "None",
     "F10": "None",
+    "CtrlEnd": "CursorEnd",
 }

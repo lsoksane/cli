@@ -1,4 +1,4 @@
-set micro_version 2.0.10
+set micro_version 2.0.11
 
 set confdir (status dirname)/../micro
 

@@ -48,4 +48,4 @@ set -U -x FZF_DEFAULT_OPTS '--height 40% --layout=reverse --inline-info'\
 set -gx LS_COLORS (printf (cat $LOCALDIR/config/ls_colors))
 set -gx LS_IMPORTANT (cat $LOCALDIR/config/ls_important)
 
-#set -g -x BAT_THEME 'base16'
+set -g -x BAT_THEME 'GitHub'

@@ -1,8 +1,10 @@
 source (status dirname)/fzf-funcs.fish
+source (status dirname)/fzf-funcs-custom.fish
 # ctrl+space
 bind -k nul fzf-file-widget
 # ctrl+down
 bind \e\[1\;5B fzf-history-widget
+bind \e\[1\;5A fzf-previous-dirs-widget
 
 if test -d $LOCALDIR/config
     source (status dirname)/appearance.fish

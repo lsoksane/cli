@@ -1,4 +1,4 @@
-fish_version=3.3.1
+fish_version=3.4.1
 
 if test -z "$LOCALDIR"
 then

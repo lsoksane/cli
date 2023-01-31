@@ -20,5 +20,6 @@ end
 
 if which batcat > /dev/null
     alias bat='batcat'
+    set -gx BAT_PAGER = ''
+    set -g -x BAT_THEME 'GitHub'
 end
-set -gx BAT_PAGER = ''
